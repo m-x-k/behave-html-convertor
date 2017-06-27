@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Results</title>
-
     <style>
       body {
         background-color: black;
@@ -31,25 +30,51 @@
   </head>
   <body>
     <div class="results">
+
+      <!-- Features -->
       {% for result in results %}
-        <div class="feature">
-          <div class="{{ result.status }}">{{ result.keyword }}: {{ result.name }} [{{ result.status }}]</div>
+        {% set featureId = "feature-" ~ loop.index %}
+        <div class="{{ result.status }}" onclick="toggle('{{ featureId }}')">{{ result.keyword }}: {{ result.name }} [{{ result.status | upper }}]</div>
+
+        <div id="{{ featureId }}" class="feature">
+
+          <!-- Scenarios -->
           {% for scenario in result.elements %}
-            <div class="scenario">
-              <div>{{ scenario.keyword }}: {{ scenario.name }}</div>
+            {% set scenarioId = featureId ~ "-scenario-" ~ loop.index %}
+            <div class="scenario" onclick="toggle('{{ scenarioId }}')">{{ scenario.keyword }}: {{ scenario.name }}</div>
+            <div id="{{ scenarioId }}" class="scenario">
+
+              <!-- Steps -->
               <div class="steps">
                 {% for step in scenario.steps %}
                   {% if step.result %}
                     <div class="{{ step.result.status }}">{{ step.keyword }}: {{ step.name }}</div>
                   {% else %}
-                    <div>{{ step.keyword }}: {{ step.name }}</div>                    
+                    <div>{{ step.keyword }}: {{ step.name }}</div>
                   {% endif %}
                 {% endfor %}
               </div>
+              <!-- End Steps -->
+
             </div>
           {% endfor %}
+          <!-- End Scenarios -->
+
         </div>
       {% endfor %}
+      <!-- End Features -->
+
     </div>
+
+    <script>
+      function toggle(id) {
+          var visibility = document.getElementById(id).style.display;
+          if (visibility === 'none') {
+              document.getElementById(id).style.display = 'block';
+          } else {
+            document.getElementById(id).style.display = 'none';
+          }
+      }
+    </script>
   </body>
 </html>
