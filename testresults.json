@@ -1,0 +1,464 @@
+[
+  {
+    "tags": [],
+    "elements": [
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "continue by selecting a fas number",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Fasnumbers.feature:5",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Fasnumbers.feature:6",
+            "keyword": "When",
+            "name": "I continue the application such that I am on the Your Fas number"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Fasnumbers.feature:7",
+            "keyword": "And",
+            "name": "I select a Fas number"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Fasnumbers.feature:8",
+            "keyword": "Then",
+            "name": "I can continue my application"
+          }
+        ],
+        "location": "functional_tests/features/Fasnumbers.feature:4",
+        "type": "scenario"
+      },
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "Continue without selecting a fas number",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Fasnumbers.feature:11",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Fasnumbers.feature:12",
+            "keyword": "When",
+            "name": "I continue the application such that I am on the Your Fas number"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Fasnumbers.feature:13",
+            "keyword": "And",
+            "name": "I continue without selecting a Fas number"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Fasnumbers.feature:14",
+            "keyword": "Then",
+            "name": "a validation message is shown: Fas number is required"
+          }
+        ],
+        "location": "functional_tests/features/Fasnumbers.feature:10",
+        "type": "scenario"
+      }
+    ],
+    "keyword": "Feature",
+    "name": "As a solicitor I would like to choose a Fas number for my application",
+    "location": "functional_tests/features/Fasnumbers.feature:2",
+    "status": "skipped"
+  },
+  {
+    "tags": [],
+    "elements": [
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "Continue the application without any email address",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Notification.feature:6",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Notification.feature:7",
+            "keyword": "When",
+            "name": "I continue the application such that I am on the notifications page"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Notification.feature:8",
+            "keyword": "And",
+            "name": "there is no email address given"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Notification.feature:9",
+            "keyword": "Then",
+            "name": "a validation message is shown: Enter a valid email address"
+          }
+        ],
+        "location": "functional_tests/features/Notification.feature:5",
+        "type": "scenario"
+      },
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "Continue with an email address with incorrect format",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Notification.feature:13",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Notification.feature:14",
+            "keyword": "When",
+            "name": "I continue the application such that I am on the notifications page"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Notification.feature:15",
+            "keyword": "And",
+            "name": "I enter an invalid email address"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Notification.feature:16",
+            "keyword": "Then",
+            "name": "a validation message is shown: Enter a valid email address"
+          }
+        ],
+        "location": "functional_tests/features/Notification.feature:12",
+        "type": "scenario"
+      },
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "Continue with a valid email address",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Notification.feature:20",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Notification.feature:21",
+            "keyword": "When",
+            "name": "I continue the application such that I am on the notifications page"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Notification.feature:22",
+            "keyword": "And",
+            "name": "I enter a valid email address or there is one present"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Notification.feature:23",
+            "keyword": "Then",
+            "name": "I can continue my application"
+          }
+        ],
+        "location": "functional_tests/features/Notification.feature:19",
+        "type": "scenario"
+      }
+    ],
+    "description": [
+      "application"
+    ],
+    "keyword": "Feature",
+    "name": "As a solicitor I should be able to have an email for my",
+    "location": "functional_tests/features/Notification.feature:2",
+    "status": "skipped"
+  },
+  {
+    "tags": [],
+    "elements": [
+      {
+        "name": "Launch the reference number page",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Referencenumber.feature:5",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Referencenumber.feature:6",
+            "keyword": "When",
+            "name": "I search for the title info using a valid title number like FFE2273"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Referencenumber.feature:7",
+            "keyword": "And",
+            "name": "I proceed to Register security against the title"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Referencenumber.feature:8",
+            "keyword": "Then",
+            "name": "I am taken to the Your reference number page"
+          }
+        ],
+        "location": "functional_tests/features/Referencenumber.feature:4",
+        "keyword": "Background",
+        "type": "background"
+      },
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "Inputting a reference number",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Referencenumber.feature:5",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Referencenumber.feature:6",
+            "keyword": "When",
+            "name": "I search for the title info using a valid title number like FFE2273"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Referencenumber.feature:7",
+            "keyword": "And",
+            "name": "I proceed to Register security against the title"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Referencenumber.feature:8",
+            "keyword": "Then",
+            "name": "I am taken to the Your reference number page"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Referencenumber.feature:12",
+            "keyword": "When",
+            "name": "I continue after entering a reference number like AUTO/TEST/REF"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Referencenumber.feature:13",
+            "keyword": "Then",
+            "name": "I can proceed to the Your FAS number page"
+          }
+        ],
+        "location": "functional_tests/features/Referencenumber.feature:11",
+        "type": "scenario"
+      },
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "Continuing the draft application without entering a reference number",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Referencenumber.feature:5",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Referencenumber.feature:6",
+            "keyword": "When",
+            "name": "I search for the title info using a valid title number like FFE2273"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Referencenumber.feature:7",
+            "keyword": "And",
+            "name": "I proceed to Register security against the title"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Referencenumber.feature:8",
+            "keyword": "Then",
+            "name": "I am taken to the Your reference number page"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Referencenumber.feature:16",
+            "keyword": "When",
+            "name": "I continue without entering a reference num"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Referencenumber.feature:17",
+            "keyword": "Then",
+            "name": "I can proceed to the Your FAS number page"
+          }
+        ],
+        "location": "functional_tests/features/Referencenumber.feature:15",
+        "type": "scenario"
+      }
+    ],
+    "keyword": "Feature",
+    "name": "As a Solicitor,I would like to enter my client reference number",
+    "location": "functional_tests/features/Referencenumber.feature:2",
+    "status": "skipped"
+  },
+  {
+    "tags": [
+      "sanity"
+    ],
+    "elements": [
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "Searching for a title number",
+        "steps": [
+          {
+            "keyword": "Given",
+            "match": {
+              "arguments": [
+                {
+                  "name": "user_type",
+                  "value": "solicitor"
+                }
+              ],
+              "location": "functional_tests/steps/search_title.py:7"
+            },
+            "name": "that I have logged into security services as a solicitor",
+            "location": "functional_tests/features/SearchATitle.feature:7",
+            "step_type": "given",
+            "result": {
+              "duration": 130.22575688362122,
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "When",
+            "match": {
+              "arguments": [
+                {
+                  "name": "title_no",
+                  "value": "FFE2273"
+                }
+              ],
+              "location": "functional_tests/steps/search_title.py:22"
+            },
+            "name": "I search for the title info using a valid title number like FFE2273",
+            "location": "functional_tests/features/SearchATitle.feature:8",
+            "step_type": "when",
+            "result": {
+              "duration": 0.7323734760284424,
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Then",
+            "match": {
+              "arguments": [],
+              "location": "functional_tests/steps/title_results.py:6"
+            },
+            "name": "the title information is returned",
+            "location": "functional_tests/features/SearchATitle.feature:9",
+            "step_type": "then",
+            "result": {
+              "duration": 0.013384819030761719,
+              "status": "passed"
+            }
+          }
+        ],
+        "location": "functional_tests/features/SearchATitle.feature:6",
+        "type": "scenario"
+      },
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "The title search results is formatted to display the right information",
+        "steps": [
+          {
+            "keyword": "Given",
+            "match": {
+              "arguments": [],
+              "location": "functional_tests/steps/search_title.py:34"
+            },
+            "name": "I have searched for a title to register a security",
+            "location": "functional_tests/features/SearchATitle.feature:13",
+            "step_type": "given",
+            "result": {
+              "duration": 130.93757462501526,
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Then",
+            "match": {
+              "arguments": [],
+              "location": "functional_tests/steps/title_results.py:12"
+            },
+            "name": "the title information contains the Title number,Title address and Proprietor details",
+            "location": "functional_tests/features/SearchATitle.feature:14",
+            "step_type": "then",
+            "result": {
+              "duration": 0.2500276565551758,
+              "status": "passed"
+            }
+          }
+        ],
+        "location": "functional_tests/features/SearchATitle.feature:12",
+        "type": "scenario"
+      }
+    ],
+    "keyword": "Feature",
+    "name": "As a solicitor,I would like to be able to enter and confirm a title number",
+    "location": "functional_tests/features/SearchATitle.feature:3",
+    "status": "passed"
+  },
+  {
+    "tags": [],
+    "elements": [
+      {
+        "tags": [],
+        "keyword": "Scenario",
+        "name": "verify summary page detail",
+        "steps": [
+          {
+            "step_type": "given",
+            "location": "functional_tests/features/Summary.feature:5",
+            "keyword": "Given",
+            "name": "that I have logged into security services as a solicitor"
+          },
+          {
+            "step_type": "when",
+            "location": "functional_tests/features/Summary.feature:6",
+            "keyword": "When",
+            "name": "I create a draft security application with some information for title FFE2273"
+          },
+          {
+            "step_type": "then",
+            "location": "functional_tests/features/Summary.feature:7",
+            "keyword": "Then",
+            "name": "the summary page all the application details inputted so far for title FFE2273"
+          }
+        ],
+        "location": "functional_tests/features/Summary.feature:4",
+        "type": "scenario"
+      }
+    ],
+    "keyword": "Feature",
+    "name": "As a solicitor I, i would like to view the summary page",
+    "location": "functional_tests/features/Summary.feature:2",
+    "status": "skipped"
+  }
+]

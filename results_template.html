@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      div.failed {
+        background-color: red;
+      }
+      div.passed {
+        background-color: green;
+      }
+      div.skipped {
+        background-color: rgb(19, 47, 148);
+      }
+      div.scenario {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+      }
+      div.steps {
+        padding-top: 10px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="results">
+      {% for result in results %}
+        <div class="feature">
+          <div class="{{ result.status }}">{{ result.keyword }}: {{ result.name }} [{{ result.status }}]</div>
+          {% for scenario in result.elements %}
+            <div class="scenario">
+              <div>{{ scenario.keyword }}: {{ scenario.name }}</div>
+              <div class="steps">
+                {% for step in scenario.steps %}
+                  {% if step.result %}
+                    <div class="{{ step.result.status }}">{{ step.keyword }}: {{ step.name }}</div>
+                  {% else %}
+                    <div>{{ step.keyword }}: {{ step.name }}</div>                    
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
