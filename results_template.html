@@ -4,44 +4,61 @@
     <meta charset="utf-8">
     <title>Results</title>
     <style>
-      body {
-        background-color: black;
-        color: white;
-      }
-      div.failed {
-        background-color: red;
-      }
-      div.passed {
-        background-color: green;
-      }
-      div.skipped {
-        background-color: rgb(19, 47, 148);
-      }
-      div.scenario {
-        padding-top: 10px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-      }
-      div.steps {
-        padding-top: 10px;
-        padding-left: 10px;
-      }
+    {{ css_content }}
     </style>
   </head>
   <body>
+
+    <h1>{{ general.title }}</h1>
+
+    <div class="report">
+      <table class="report-stats">
+        <thead>
+          <tr class="header">
+            <th></th>
+            <th colspan="4">Scenarios</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr class="header-row">
+            <th>Feature</th>
+            <th>Total</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+            <th>Duration (ms)</th>
+            <th>Status</th>
+          </tr>
+        {% for report in report_stats.features %}
+          <tr>
+            <th>{{ report.name }}</th>
+            <th>{{ report.scenarios.total }}</th>
+            <th>{{ report.scenarios.passed }}</th>
+            <th>{{ report.scenarios.failed }}</th>
+            <th>{{ report.scenarios.skipped }}</th>
+            <th>{{ report.duration }}</th>
+            <th>{{ report.status }}</th>
+          </tr>
+        {% endfor %}
+        </thead>
+      </table>
+    </div>
+
     <div class="results">
 
       <!-- Features -->
       {% for result in results %}
         {% set featureId = "feature-" ~ loop.index %}
-        <div class="{{ result.status }}" onclick="toggle('{{ featureId }}')">{{ result.keyword }}: {{ result.name }} [{{ result.status | upper }}]</div>
+        <div class="feature-header {{ result.status }}" onclick="toggle('{{ featureId }}')">{{ result.keyword }}: {{ result.name }}
+          <span class="float-right">[{{ result.status | upper }}]</span>
+        </div>
 
         <div id="{{ featureId }}" class="feature">
 
           <!-- Scenarios -->
           {% for scenario in result.elements %}
             {% set scenarioId = featureId ~ "-scenario-" ~ loop.index %}
-            <div class="scenario" onclick="toggle('{{ scenarioId }}')">{{ scenario.keyword }}: {{ scenario.name }}</div>
+            <div class="scenario-header" onclick="toggle('{{ scenarioId }}')">{{ scenario.keyword }}: {{ scenario.name }}</div>
             <div id="{{ scenarioId }}" class="scenario">
 
               <!-- Steps -->

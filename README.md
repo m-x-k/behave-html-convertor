@@ -1,8 +1,6 @@
 # Behave custom HTML report
 
-THIS IS A WORK IN PROGRESS!!!
-
-Based on the standard behave report format this script outputs a custom html report.
+Using the behave json report format this script outputs a custom html report.
 
 ## Requirements
 
@@ -22,8 +20,20 @@ pip install -r requirements.txt
 
 ## Run
 
-* A sample testresults.json file has been provided but this would typically come from running behave with the necessary parameter setting.
+As input you should take the report produced from a behave test run: `behave --format json ...`.
 
 ```
-python convertToHtml.py > results.html
+python convertToHtml.py -h
+
+usage: convertToHtml.py [-h] [-t T] [-i I] [-c C]
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -t T        Title for test report
+  -i I        Behave json input file
+  -c C        Override css
+
+Example:
+
+python convertToHtml.py -t "Test Report" -i testresults.json -c dark-style.css > results.html
 ```
