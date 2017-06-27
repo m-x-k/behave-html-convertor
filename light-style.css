@@ -1,0 +1,59 @@
+body {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 1.2em;
+}
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+table.report-stats {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left:auto;
+  margin-right:auto;
+}
+table.report-stats td, th {
+  padding: 10px;
+}
+table.report-stats tr.header {
+  background-color: #66CCEE;
+}
+.float-right {
+  float: right;
+}
+.failed {
+  background-color: lightcoral;
+}
+.passed {
+  background-color: lightgreen;
+}
+.skipped {
+  background-color: lightblue;
+}
+div.results {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+div.feature-header {
+  padding: 10px;
+}
+div.feature {
+  display: none;
+  padding: 10px;
+  border-color: white;
+}
+div.scenario {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+div.scenario-header {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+div.steps {
+  padding-top: 10px;
+  padding-left: 10px;
+}

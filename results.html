@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <style>
+    body {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 1.2em;
+}
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+table.report-stats {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left:auto;
+  margin-right:auto;
+}
+table.report-stats td, th {
+  padding: 10px;
+}
+table.report-stats tr.header {
+  background-color: #66CCEE;
+}
+.float-right {
+  float: right;
+}
+.failed {
+  background-color: red;
+}
+.passed {
+  background-color: green;
+}
+.skipped {
+  background-color: rgb(19, 47, 148);
+}
+div.results {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+div.feature-header {
+  padding: 10px;
+}
+div.feature {
+  padding: 10px;
+  border-color: white;
+}
+div.scenario {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+div.scenario-header {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+div.steps {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+    </style>
+  </head>
+  <body>
+
+    <h1>Test Results</h1>
+
+    <div class="report">
+      <table class="report-stats">
+        <thead>
+          <tr class="header">
+            <th></th>
+            <th colspan="4">Scenarios</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr class="header-row">
+            <th>Feature</th>
+            <th>Total</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+            <th>Duration (ms)</th>
+            <th>Status</th>
+          </tr>
+        
+          <tr>
+            <th>A sample test framework</th>
+            <th>1</th>
+            <th>3</th>
+            <th>0</th>
+            <th>0</th>
+            <th>48</th>
+            <th>passed</th>
+          </tr>
+        
+        </thead>
+      </table>
+    </div>
+
+    <div class="results">
+
+      <!-- Features -->
+      
+        
+        <div class="feature-header passed" onclick="toggle('feature-1')">Feature: A sample test framework
+          <span class="float-right">[PASSED]</span>
+        </div>
+
+        <div id="feature-1" class="feature">
+
+          <!-- Scenarios -->
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-1-scenario-1')">Scenario: open a website</div>
+            <div id="feature-1-scenario-1" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="passed">Given: I visit the website www.bbc.co.uk</div>
+                  
+                
+                  
+                    <div class="passed">When: I click on the news link</div>
+                  
+                
+                  
+                    <div class="passed">Then: the bbc news page is opened</div>
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+          <!-- End Scenarios -->
+
+        </div>
+      
+      <!-- End Features -->
+
+    </div>
+
+    <script>
+      function toggle(id) {
+          var visibility = document.getElementById(id).style.display;
+          if (visibility === 'none') {
+              document.getElementById(id).style.display = 'block';
+          } else {
+            document.getElementById(id).style.display = 'none';
+          }
+      }
+    </script>
+  </body>
+</html>
