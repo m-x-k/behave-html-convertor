@@ -131,7 +131,6 @@ def read(filename):
     read_data = []
     with open(filename, 'r') as f:
         read_data = f.read()
-    f.closed
     return read_data
 
 
@@ -139,12 +138,11 @@ def write(filename, data):
     read_data = []
     with open(filename, 'w') as f:
         f.write(data)
-    f.closed
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-t",
+    parser.add_argument("-n",
                         default="Test Report",
                         help="Title for test report")
     parser.add_argument("-i",
@@ -156,19 +154,24 @@ if __name__ == '__main__':
     parser.add_argument("-c",
                         default="light-style.css",
                         help="Override css")
+    parser.add_argument("-t",
+                        default="results_template.html",
+                        help="jinja2 template")
     args = parser.parse_args()
+    titlename = args.n
     inputfile = args.i
     outputfile = args.o
+    jinja2_template_file = args.t
     cssfile = args.c
 
     general_content = {
-        "title": args.t
+        "title": titlename
     }
 
     css_content = read(filename=cssfile)
     results = loads(read(filename=inputfile))
     report_stats = get_report_stats(results)
-    result = render('results_template.html',
+    result = render(jinja2_template_file,
                     results,
                     report_stats,
                     css_content,
