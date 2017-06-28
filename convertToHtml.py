@@ -135,6 +135,13 @@ def read(filename):
     return read_data
 
 
+def write(filename, data):
+    read_data = []
+    with open(filename, 'w') as f:
+        f.write(data)
+    f.closed
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-t",
@@ -143,11 +150,15 @@ if __name__ == '__main__':
     parser.add_argument("-i",
                         default="testresults.json",
                         help="Behave json input file")
+    parser.add_argument("-o",
+                        default="results.html",
+                        help="Output html file")
     parser.add_argument("-c",
                         default="light-style.css",
                         help="Override css")
     args = parser.parse_args()
     inputfile = args.i
+    outputfile = args.o
     cssfile = args.c
 
     general_content = {
@@ -163,3 +174,5 @@ if __name__ == '__main__':
                     css_content,
                     general_content)
     print(result)
+    if outputfile:
+        write(outputfile, result)

@@ -5,9 +5,8 @@
     <title>Results</title>
     <style>
     body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 10px;
   font-size: 0.8em;
 }
@@ -30,7 +29,7 @@ table.report-stats tr.header {
 }
 table.report-stats tr.footer {
   background-color: grey;
-  font-weight: bold;  
+  font-weight: bold;
 }
 .bold {
   font-weight: bold;
@@ -41,17 +40,14 @@ table.report-stats tr.footer {
 .float-right {
   float: right;
 }
-.keyword {
-  font-weight: bold;
-}
 .failed {
-  background-color: #F2928C;
+  background-color: red;
 }
 .passed {
-  background-color: #92DD96;
+  background-color: green;
 }
 .skipped {
-  background-color: #8AF;
+  background-color: rgb(19, 47, 148);
 }
 div.results {
   padding-left: 50px;
@@ -62,7 +58,6 @@ div.feature-header {
   font-weight: bold;
 }
 div.feature {
-  display: none;
   padding: 10px;
   border-color: white;
 }
@@ -91,7 +86,7 @@ div.step {
   </head>
   <body>
 
-    <h1>Test Report 1234</h1>
+    <h1>Test Report</h1>
 
     <div class="report">
       <table class="report-stats">
@@ -126,120 +121,40 @@ div.step {
         
           <tr>
             <td></td>
-            <td class="bold">As a solicitor I would like to choose a Fas number for my application</td>
+            <td class="bold">A sample test framework</td>
 
             <!-- Scenarios -->
-            <td>2</td>
+            <td>1</td>
+            <td>1</td>
             <td>0</td>
             <td>0</td>
-            <td>2</td>
 
             <!-- Steps -->
-            <td>8</td>
-            <td>0</td>
-            <td>0</td>
-            <td>8</td>
-
-            <td>0</td>
-            <td class="skipped">skipped</td>
-          </tr>
-        
-          <tr>
-            <td></td>
-            <td class="bold">As a solicitor I should be able to have an email for my</td>
-
-            <!-- Scenarios -->
+            <td>3</td>
             <td>3</td>
             <td>0</td>
             <td>0</td>
-            <td>3</td>
 
-            <!-- Steps -->
-            <td>12</td>
-            <td>0</td>
-            <td>0</td>
-            <td>12</td>
-
-            <td>0</td>
-            <td class="skipped">skipped</td>
-          </tr>
-        
-          <tr>
-            <td></td>
-            <td class="bold">As a Solicitor,I would like to enter my client reference number</td>
-
-            <!-- Scenarios -->
-            <td>2</td>
-            <td>0</td>
-            <td>0</td>
-            <td>2</td>
-
-            <!-- Steps -->
-            <td>12</td>
-            <td>0</td>
-            <td>0</td>
-            <td>12</td>
-
-            <td>0</td>
-            <td class="skipped">skipped</td>
-          </tr>
-        
-          <tr>
-            <td></td>
-            <td class="bold">As a solicitor,I would like to be able to enter and confirm a title number</td>
-
-            <!-- Scenarios -->
-            <td>2</td>
-            <td>2</td>
-            <td>0</td>
-            <td>0</td>
-
-            <!-- Steps -->
-            <td>5</td>
-            <td>5</td>
-            <td>0</td>
-            <td>0</td>
-
-            <td>263</td>
+            <td>48</td>
             <td class="passed">passed</td>
-          </tr>
-        
-          <tr>
-            <td></td>
-            <td class="bold">As a solicitor I, i would like to view the summary page</td>
-
-            <!-- Scenarios -->
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-
-            <!-- Steps -->
-            <td>3</td>
-            <td>0</td>
-            <td>0</td>
-            <td>3</td>
-
-            <td>0</td>
-            <td class="skipped">skipped</td>
           </tr>
         
 
           <tr class="footer">
             <td>Totals</td>
-            <td>5</td>
+            <td>1</td>
 
-            <td>10</td>
-            <td>2</td>
+            <td>1</td>
+            <td>1</td>
             <td>0</td>
-            <td>8</td>
-
-            <td>40</td>
-            <td>5</td>
             <td>0</td>
-            <td>35</td>
 
-            <td>263</td>
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+
+            <td>48</td>
             <td class="passed">passed</td>
           </tr>
         </thead>
@@ -252,8 +167,8 @@ div.step {
       <!-- Features -->
       
         
-        <div class="feature-header skipped" onclick="toggle('feature-1')">Feature: As a solicitor I would like to choose a Fas number for my application
-          <span class="float-right">[SKIPPED]</span>
+        <div class="feature-header passed" onclick="toggle('feature-1')">Feature: A sample test framework
+          <span class="float-right">[PASSED]</span>
         </div>
 
         <div id="feature-1" class="feature">
@@ -261,358 +176,22 @@ div.step {
           <!-- Scenarios -->
           
             
-            <div class="scenario-header" onclick="toggle('feature-1-scenario-1')">Scenario: continue by selecting a fas number</div>
+            <div class="scenario-header" onclick="toggle('feature-1-scenario-1')">Scenario: open a website</div>
             <div id="feature-1-scenario-1" class="scenario">
 
               <!-- Steps -->
               <div class="steps">
                 
                   
-                    <div>Given: that I have logged into security services as a solicitor</div>
+                    <div class="step passed">Given: I visit the website www.bbc.co.uk</div>
                   
                 
                   
-                    <div>When: I continue the application such that I am on the Your Fas number</div>
+                    <div class="step passed">When: I click on the news link</div>
                   
                 
                   
-                    <div>And: I select a Fas number</div>
-                  
-                
-                  
-                    <div>Then: I can continue my application</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-1-scenario-2')">Scenario: Continue without selecting a fas number</div>
-            <div id="feature-1-scenario-2" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div>Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div>When: I continue the application such that I am on the Your Fas number</div>
-                  
-                
-                  
-                    <div>And: I continue without selecting a Fas number</div>
-                  
-                
-                  
-                    <div>Then: a validation message is shown: Fas number is required</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-          <!-- End Scenarios -->
-
-        </div>
-      
-        
-        <div class="feature-header skipped" onclick="toggle('feature-2')">Feature: As a solicitor I should be able to have an email for my
-          <span class="float-right">[SKIPPED]</span>
-        </div>
-
-        <div id="feature-2" class="feature">
-
-          <!-- Scenarios -->
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-2-scenario-1')">Scenario: Continue the application without any email address</div>
-            <div id="feature-2-scenario-1" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div>Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div>When: I continue the application such that I am on the notifications page</div>
-                  
-                
-                  
-                    <div>And: there is no email address given</div>
-                  
-                
-                  
-                    <div>Then: a validation message is shown: Enter a valid email address</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-2-scenario-2')">Scenario: Continue with an email address with incorrect format</div>
-            <div id="feature-2-scenario-2" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div>Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div>When: I continue the application such that I am on the notifications page</div>
-                  
-                
-                  
-                    <div>And: I enter an invalid email address</div>
-                  
-                
-                  
-                    <div>Then: a validation message is shown: Enter a valid email address</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-2-scenario-3')">Scenario: Continue with a valid email address</div>
-            <div id="feature-2-scenario-3" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div>Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div>When: I continue the application such that I am on the notifications page</div>
-                  
-                
-                  
-                    <div>And: I enter a valid email address or there is one present</div>
-                  
-                
-                  
-                    <div>Then: I can continue my application</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-          <!-- End Scenarios -->
-
-        </div>
-      
-        
-        <div class="feature-header skipped" onclick="toggle('feature-3')">Feature: As a Solicitor,I would like to enter my client reference number
-          <span class="float-right">[SKIPPED]</span>
-        </div>
-
-        <div id="feature-3" class="feature">
-
-          <!-- Scenarios -->
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-3-scenario-1')">Background: Launch the reference number page</div>
-            <div id="feature-3-scenario-1" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div>Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div>When: I search for the title info using a valid title number like FFE2273</div>
-                  
-                
-                  
-                    <div>And: I proceed to Register security against the title</div>
-                  
-                
-                  
-                    <div>Then: I am taken to the Your reference number page</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-3-scenario-2')">Scenario: Inputting a reference number</div>
-            <div id="feature-3-scenario-2" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div>Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div>When: I search for the title info using a valid title number like FFE2273</div>
-                  
-                
-                  
-                    <div>And: I proceed to Register security against the title</div>
-                  
-                
-                  
-                    <div>Then: I am taken to the Your reference number page</div>
-                  
-                
-                  
-                    <div>When: I continue after entering a reference number like AUTO/TEST/REF</div>
-                  
-                
-                  
-                    <div>Then: I can proceed to the Your FAS number page</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-3-scenario-3')">Scenario: Continuing the draft application without entering a reference number</div>
-            <div id="feature-3-scenario-3" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div>Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div>When: I search for the title info using a valid title number like FFE2273</div>
-                  
-                
-                  
-                    <div>And: I proceed to Register security against the title</div>
-                  
-                
-                  
-                    <div>Then: I am taken to the Your reference number page</div>
-                  
-                
-                  
-                    <div>When: I continue without entering a reference num</div>
-                  
-                
-                  
-                    <div>Then: I can proceed to the Your FAS number page</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-          <!-- End Scenarios -->
-
-        </div>
-      
-        
-        <div class="feature-header passed" onclick="toggle('feature-4')">Feature: As a solicitor,I would like to be able to enter and confirm a title number
-          <span class="float-right">[PASSED]</span>
-        </div>
-
-        <div id="feature-4" class="feature">
-
-          <!-- Scenarios -->
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-4-scenario-1')">Scenario: Searching for a title number</div>
-            <div id="feature-4-scenario-1" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div class="step passed">Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div class="step passed">When: I search for the title info using a valid title number like FFE2273</div>
-                  
-                
-                  
-                    <div class="step passed">Then: the title information is returned</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-4-scenario-2')">Scenario: The title search results is formatted to display the right information</div>
-            <div id="feature-4-scenario-2" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div class="step passed">Given: I have searched for a title to register a security</div>
-                  
-                
-                  
-                    <div class="step passed">Then: the title information contains the Title number,Title address and Proprietor details</div>
-                  
-                
-              </div>
-              <!-- End Steps -->
-
-            </div>
-          
-          <!-- End Scenarios -->
-
-        </div>
-      
-        
-        <div class="feature-header skipped" onclick="toggle('feature-5')">Feature: As a solicitor I, i would like to view the summary page
-          <span class="float-right">[SKIPPED]</span>
-        </div>
-
-        <div id="feature-5" class="feature">
-
-          <!-- Scenarios -->
-          
-            
-            <div class="scenario-header" onclick="toggle('feature-5-scenario-1')">Scenario: verify summary page detail</div>
-            <div id="feature-5-scenario-1" class="scenario">
-
-              <!-- Steps -->
-              <div class="steps">
-                
-                  
-                    <div>Given: that I have logged into security services as a solicitor</div>
-                  
-                
-                  
-                    <div>When: I create a draft security application with some information for title FFE2273</div>
-                  
-                
-                  
-                    <div>Then: the summary page all the application details inputted so far for title FFE2273</div>
+                    <div class="step passed">Then: the bbc news page is opened</div>
                   
                 
               </div>
