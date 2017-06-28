@@ -2,7 +2,7 @@ body {
   background-color: black;
   color: white;
   padding: 10px;
-  font-size: 1.2em;
+  font-size: 0.8em;
 }
 h1 {
   font-size: 3em;
@@ -23,6 +23,13 @@ table.report-stats tr.header {
 }
 table.report-stats tr.footer {
   background-color: grey;
+  font-weight: bold;
+}
+.bold {
+  font-weight: bold;
+}
+.info {
+  font-style: italic;
 }
 .float-right {
   float: right;
@@ -42,6 +49,7 @@ div.results {
 }
 div.feature-header {
   padding: 10px;
+  font-weight: bold;
 }
 div.feature {
   padding: 10px;
@@ -55,8 +63,15 @@ div.scenario {
 div.scenario-header {
   padding-top: 10px;
   padding-left: 10px;
+  font-weight: bold;
 }
 div.steps {
   padding-top: 10px;
   padding-left: 10px;
+}
+div.step {
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }

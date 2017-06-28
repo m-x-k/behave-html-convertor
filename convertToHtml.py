@@ -86,9 +86,9 @@ def get_feature(result):
             passed = True
             skipped = False
             for step in scenario.get('steps', []):
-                result = step.get('result', {})
-                duration += result.get('duration', 0)
-                status = result.get('status', 'skipped')
+                step_result = step.get('result', {})
+                duration += step_result.get('duration', 0)
+                status = step_result.get('status', 'skipped')
                 if status:
                     total_steps += 1
                     if status == "passed":

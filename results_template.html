@@ -44,7 +44,7 @@
         {% for report in report_stats.features %}
           <tr>
             <td></td>
-            <td>{{ report.name }}</td>
+            <td class="bold">{{ report.name }}</td>
 
             <!-- Scenarios -->
             <td>{{ report.scenarios.total }}</td>
@@ -86,6 +86,7 @@
 
     <div class="results">
 
+      <span class="info">Click feature or scenario to expand</span>
       <!-- Features -->
       {% for result in results %}
         {% set featureId = "feature-" ~ loop.index %}
@@ -105,7 +106,7 @@
               <div class="steps">
                 {% for step in scenario.steps %}
                   {% if step.result %}
-                    <div class="{{ step.result.status }}">{{ step.keyword }}: {{ step.name }}</div>
+                    <div class="step {{ step.result.status }}">{{ step.keyword }}: {{ step.name }}</div>
                   {% else %}
                     <div>{{ step.keyword }}: {{ step.name }}</div>
                   {% endif %}
