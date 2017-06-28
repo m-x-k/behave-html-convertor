@@ -66,6 +66,16 @@
                 {% for step in scenario.steps %}
                   {% if step.result %}
                     <div class="{{ step.result.status }}">{{ step.keyword }}: {{ step.name }}</div>
+
+                    <!-- Errors -->
+                    {% if step.result.error_message %}
+                      <div class="error-message">
+                      {% for msg in step.result.error_message %}
+                        <span class="error-message-line">{{ msg }}</span>
+                      {% endfor %}
+                      </div>
+                    {% endif %}
+
                   {% else %}
                     <div>{{ step.keyword }}: {{ step.name }}</div>
                   {% endif %}

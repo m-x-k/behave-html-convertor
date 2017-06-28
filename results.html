@@ -5,8 +5,8 @@
     <title>Results</title>
     <style>
     body {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 10px;
   font-size: 1.2em;
 }
@@ -30,13 +30,18 @@ table.report-stats tr.header {
   float: right;
 }
 .failed {
-  background-color: red;
+  background-color: lightcoral;
 }
 .passed {
-  background-color: green;
+  background-color: lightgreen;
 }
 .skipped {
-  background-color: rgb(19, 47, 148);
+  background-color: lightblue;
+}
+.error-message {
+  padding: 20px;
+  background-color: lightpink;
+  font-style: italic;
 }
 div.results {
   padding-left: 50px;
@@ -46,6 +51,7 @@ div.feature-header {
   padding: 10px;
 }
 div.feature {
+  display: none;
   padding: 10px;
   border-color: white;
 }
@@ -89,13 +95,23 @@ div.steps {
           </tr>
         
           <tr>
-            <th>A sample test framework</th>
+            <th>Successful example</th>
             <th>1</th>
             <th>3</th>
             <th>0</th>
             <th>0</th>
             <th>48</th>
             <th>passed</th>
+          </tr>
+        
+          <tr>
+            <th>Failure example</th>
+            <th>2</th>
+            <th>3</th>
+            <th>1</th>
+            <th>2</th>
+            <th>49</th>
+            <th>failed</th>
           </tr>
         
         </thead>
@@ -107,7 +123,7 @@ div.steps {
       <!-- Features -->
       
         
-        <div class="feature-header passed" onclick="toggle('feature-1')">Feature: A sample test framework
+        <div class="feature-header passed" onclick="toggle('feature-1')">Feature: Successful example
           <span class="float-right">[PASSED]</span>
         </div>
 
@@ -116,7 +132,7 @@ div.steps {
           <!-- Scenarios -->
           
             
-            <div class="scenario-header" onclick="toggle('feature-1-scenario-1')">Scenario: open a website</div>
+            <div class="scenario-header" onclick="toggle('feature-1-scenario-1')">Scenario: open a website success</div>
             <div id="feature-1-scenario-1" class="scenario">
 
               <!-- Steps -->
@@ -124,14 +140,127 @@ div.steps {
                 
                   
                     <div class="passed">Given: I visit the website www.bbc.co.uk</div>
+
+                    <!-- Errors -->
+                    
+
                   
                 
                   
                     <div class="passed">When: I click on the news link</div>
+
+                    <!-- Errors -->
+                    
+
                   
                 
                   
                     <div class="passed">Then: the bbc news page is opened</div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+          <!-- End Scenarios -->
+
+        </div>
+      
+        
+        <div class="feature-header failed" onclick="toggle('feature-2')">Feature: Failure example
+          <span class="float-right">[FAILED]</span>
+        </div>
+
+        <div id="feature-2" class="feature">
+
+          <!-- Scenarios -->
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-2-scenario-1')">Scenario: open a website failure</div>
+            <div id="feature-2-scenario-1" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="failed">Given: I visit the website www.bbc.co.uk</div>
+
+                    <!-- Errors -->
+                    
+                      <div class="error-message">
+                      
+                        <span class="error-message-line">Traceback (most recent call last):</span>
+                      
+                        <span class="error-message-line">  File "/Users/martin/.virtualenvs/python-behave-example/lib/python3.6/site-packages/behave/model.py", line 1456, in run</span>
+                      
+                        <span class="error-message-line">    match.run(runner.context)</span>
+                      
+                        <span class="error-message-line">  File "/Users/martin/.virtualenvs/python-behave-example/lib/python3.6/site-packages/behave/model.py", line 1903, in run</span>
+                      
+                        <span class="error-message-line">    self.func(context, *args, **kwargs)</span>
+                      
+                        <span class="error-message-line">  File "BDD/steps/gherkin_steps.py", line 7, in step_impl</span>
+                      
+                        <span class="error-message-line">    impl.launch_website(context)</span>
+                      
+                        <span class="error-message-line">  File "/Users/martin/code/MyRepo/python-behave-example/BDD/impl/test_implementation.py", line 4, in launch_website</span>
+                      
+                        <span class="error-message-line">    assert "BOGUS" in driver.title</span>
+                      
+                        <span class="error-message-line">AssertionError</span>
+                      
+                      </div>
+                    
+
+                  
+                
+                  
+                    <div>When: I click on the news link</div>
+                  
+                
+                  
+                    <div>Then: the bbc news page is opened</div>
+                  
+                
+              </div>
+              <!-- End Steps -->
+
+            </div>
+          
+            
+            <div class="scenario-header" onclick="toggle('feature-2-scenario-2')">Scenario: open a website success</div>
+            <div id="feature-2-scenario-2" class="scenario">
+
+              <!-- Steps -->
+              <div class="steps">
+                
+                  
+                    <div class="passed">Given: I visit the website www.bbc.co.uk</div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="passed">When: I click on the news link</div>
+
+                    <!-- Errors -->
+                    
+
+                  
+                
+                  
+                    <div class="passed">Then: the bbc news page is opened</div>
+
+                    <!-- Errors -->
+                    
+
                   
                 
               </div>
