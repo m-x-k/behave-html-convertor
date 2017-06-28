@@ -31,9 +31,10 @@ optional arguments:
   -h, --help  show this help message and exit
   -t T        Title for test report
   -i I        Behave json input file
+  -o O        Output html file
   -c C        Override css
 
 Example:
 
-python convertToHtml.py -t "Test Report" -i testresults.json -c dark-style.css > results.html
+python convertToHtml.py -t "Test Report" -i testresults.json -c dark-style.css -o results.html
 ```
