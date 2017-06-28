@@ -9,16 +9,20 @@ h1 {
   text-align: center;
 }
 table.report-stats {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 50px;
   margin-left:auto;
   margin-right:auto;
 }
 table.report-stats td, th {
+  border: 1px solid gray;
   padding: 10px;
 }
 table.report-stats tr.header {
   background-color: #66CCEE;
+}
+table.report-stats tr.footer {
+  background-color: grey;
 }
 .float-right {
   float: right;

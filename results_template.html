@@ -16,30 +16,70 @@
         <thead>
           <tr class="header">
             <th></th>
+            <th></th>
             <th colspan="4">Scenarios</th>
+            <th colspan="4">Steps</th>
             <th></th>
             <th></th>
           </tr>
           <tr class="header-row">
+            <th></th>
             <th>Feature</th>
+
+            <!-- Scenarios -->
             <th>Total</th>
             <th>Passed</th>
             <th>Failed</th>
             <th>Skipped</th>
+
+            <!-- Steps -->
+            <th>Total</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+
             <th>Duration (ms)</th>
             <th>Status</th>
           </tr>
         {% for report in report_stats.features %}
           <tr>
-            <th>{{ report.name }}</th>
-            <th>{{ report.scenarios.total }}</th>
-            <th>{{ report.scenarios.passed }}</th>
-            <th>{{ report.scenarios.failed }}</th>
-            <th>{{ report.scenarios.skipped }}</th>
-            <th>{{ report.duration }}</th>
-            <th>{{ report.status }}</th>
+            <td></td>
+            <td>{{ report.name }}</td>
+
+            <!-- Scenarios -->
+            <td>{{ report.scenarios.total }}</td>
+            <td>{{ report.scenarios.passed }}</td>
+            <td>{{ report.scenarios.failed }}</td>
+            <td>{{ report.scenarios.skipped }}</td>
+
+            <!-- Steps -->
+            <td>{{ report.scenarios.steps.total }}</td>
+            <td>{{ report.scenarios.steps.passed }}</td>
+            <td>{{ report.scenarios.steps.failed }}</td>
+            <td>{{ report.scenarios.steps.skipped }}</td>
+
+            <td>{{ report.duration }}</td>
+            <td class="{{ report.status }}">{{ report.status }}</td>
           </tr>
         {% endfor %}
+
+          <tr class="footer">
+            <td>Totals</td>
+            <td>{{ report_stats.total_features }}</td>
+
+            <td>{{ report_stats.total_scenarios }}</td>
+            <td>{{ report_stats.total_scenarios_passed }}</td>
+            <td>{{ report_stats.total_scenarios_failed }}</td>
+            <td>{{ report_stats.total_scenarios_skipped }}</td>
+
+            <td>{{ report_stats.total_steps }}</td>
+            <td>{{ report_stats.total_steps_passed }}</td>
+            <td>{{ report_stats.total_steps_failed }}</td>
+            <td>{{ report_stats.total_steps_skipped }}</td>
+
+            <td>{{ report_stats.total_duration }}</td>
+            <td class="{{ report_stats.overall_status }}">{{ report_stats.overall_status }}</td>
+          </tr>
         </thead>
       </table>
     </div>

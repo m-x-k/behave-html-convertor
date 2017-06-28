@@ -1,4 +1,5 @@
 body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: white;
   color: black;
   padding: 10px;
@@ -9,28 +10,35 @@ h1 {
   text-align: center;
 }
 table.report-stats {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 50px;
   margin-left:auto;
   margin-right:auto;
 }
 table.report-stats td, th {
+  border: 1px solid gray;
   padding: 10px;
 }
 table.report-stats tr.header {
   background-color: #66CCEE;
 }
+table.report-stats tr.footer {
+  background-color: grey;
+}
 .float-right {
   float: right;
 }
+.keyword {
+  font-weight: bold;
+}
 .failed {
-  background-color: lightcoral;
+  background-color: #F2928C;
 }
 .passed {
-  background-color: lightgreen;
+  background-color: #92DD96;
 }
 .skipped {
-  background-color: lightblue;
+  background-color: #8AF;
 }
 div.results {
   padding-left: 50px;

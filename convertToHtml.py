@@ -14,46 +14,112 @@ def render(tpl_path, results, report_stats, css_content, general_content):
                                     css_content=css_content,
                                     general=general_content)
 
+
 def get_report_stats(results):
+    overall_status = "passed"
+    total_scenarios = 0
+    total_scenarios_passed = 0
+    total_scenarios_failed = 0
+    total_scenarios_skipped = 0
+    total_steps = 0
+    total_steps_passed = 0
+    total_steps_failed = 0
+    total_steps_skipped = 0
+    total_duration = 0
     features = []
     for result in results:
-        features.append(get_feature(result))
+        feature = get_feature(result)
+        features.append(feature)
+        total_duration += feature.get('duration')
+        status = feature.get('status')
+        if status == "failed":
+            overall_status = "failed"
+
+        scenarios = feature.get('scenarios', {})
+        total_scenarios += scenarios.get('total', 0)
+        total_scenarios_failed += scenarios.get('failed', 0)
+        total_scenarios_passed += scenarios.get('passed', 0)
+        total_scenarios_skipped += scenarios.get('skipped', 0)
+
+        steps = scenarios.get('steps', {})
+        total_steps += steps.get('total', 0)
+        total_steps_failed += steps.get('failed', 0)
+        total_steps_passed += steps.get('passed', 0)
+        total_steps_skipped += steps.get('skipped', 0)
 
     stats = {
-        "features": features
+        "features": features,
+        "overall_status": overall_status,
+        "total_scenarios": total_scenarios,
+        "total_scenarios_passed": total_scenarios_passed,
+        "total_scenarios_failed": total_scenarios_failed,
+        "total_scenarios_skipped": total_scenarios_skipped,
+        "total_steps": total_steps,
+        "total_steps_passed": total_steps_passed,
+        "total_steps_failed": total_steps_failed,
+        "total_steps_skipped": total_steps_skipped,
+        "total_duration": total_duration,
+        "total_features": len(features)
     }
-
     return stats
+
 
 def get_feature(result):
     scenarios = result.get("elements")
 
     duration = 0
-    total = len(scenarios)
-    passed = 0
-    failed = 0
-    skipped = 0
+
+    total_scenarios = 0
+    passed_scenarios = 0
+    failed_scenarios = 0
+    skipped_scenarios = 0
+
+    total_steps = 0
+    passed_steps = 0
+    failed_steps = 0
+    skipped_steps = 0
 
     for scenario in scenarios:
         if scenario.get('keyword', '').lower() == "scenario":
+            total_scenarios += 1
+            # Default to passed unless skipped
+            passed = True
+            skipped = False
             for step in scenario.get('steps', []):
-                duration += step.get('result', {}).get('duration', 0)
-                status = step.get('result', {}).get('status', 'skipped')
+                result = step.get('result', {})
+                duration += result.get('duration', 0)
+                status = result.get('status', 'skipped')
                 if status:
+                    total_steps += 1
                     if status == "passed":
-                        passed += 1
+                        passed_steps += 1
                     elif status == "failed":
-                        failed += 1
+                        failed_steps += 1
+                        passed = False
                     elif status == "skipped":
-                        skipped += 1
+                        skipped_steps += 1
+                        skipped = True
+
+            if skipped:
+                skipped_scenarios += 1
+            elif passed:
+                passed_scenarios += 1
+            else:
+                failed_scenarios += 1
 
     feature = {
         "name": result.get("name"),
         "scenarios": {
-            "total": total,
-            "passed": passed,
-            "failed": failed,
-            "skipped": skipped
+            "steps": {
+                "total": total_steps,
+                "passed": passed_steps,
+                "failed": failed_steps,
+                "skipped": skipped_steps
+            },
+            "total": total_scenarios,
+            "passed": passed_scenarios,
+            "failed": failed_scenarios,
+            "skipped": skipped_scenarios
         },
         "duration": int(math.ceil(duration)),
         "status": result.get('status')
