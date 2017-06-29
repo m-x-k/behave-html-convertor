@@ -31,7 +31,6 @@
             <th>Passed</th>
             <th>Failed</th>
             <th>Skipped</th>
-<<<<<<< HEAD
 
             <!-- Steps -->
             <th>Total</th>
@@ -39,10 +38,7 @@
             <th>Failed</th>
             <th>Skipped</th>
 
-            <th>Duration (ms)</th>
-=======
             <th>Duration (seconds)</th>
->>>>>>> 2f026549ba1d141c6490d8881ea061aa0ea7c587
             <th>Status</th>
           </tr>
         {% for report in report_stats.features %}
@@ -110,10 +106,7 @@
               <div class="steps">
                 {% for step in scenario.steps %}
                   {% if step.result %}
-<<<<<<< HEAD
                     <div class="step {{ step.result.status }}">{{ step.keyword }}: {{ step.name }}</div>
-=======
-                    <div class="{{ step.result.status }}">{{ step.keyword }}: {{ step.name }}</div>
 
                     <!-- Errors -->
                     {% if step.result.error_message %}
@@ -124,7 +117,6 @@
                       </div>
                     {% endif %}
 
->>>>>>> 2f026549ba1d141c6490d8881ea061aa0ea7c587
                   {% else %}
                     <div>{{ step.keyword }}: {{ step.name }}</div>
                   {% endif %}
