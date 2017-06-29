@@ -106,7 +106,9 @@
               <div class="steps">
                 {% for step in scenario.steps %}
                   {% if step.result %}
-                    <div class="step {{ step.result.status }}">{{ step.keyword }}: {{ step.name }}</div>
+                    <div class="step {{ step.result.status }}">{{ step.keyword }}: {{ step.name }}
+                      <span class="float-right">{{ step.result.duration | round }} seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     {% if step.result.error_message %}

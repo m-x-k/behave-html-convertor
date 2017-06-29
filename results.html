@@ -5,6 +5,7 @@
     <title>Results</title>
     <style>
     body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: white;
   color: black;
   padding: 10px;
@@ -40,14 +41,17 @@ table.report-stats tr.footer {
 .float-right {
   float: right;
 }
+.keyword {
+  font-weight: bold;
+}
 .failed {
-  background-color: lightcoral;
+  background-color: #F2928C;
 }
 .passed {
-  background-color: lightgreen;
+  background-color: #92DD96;
 }
 .skipped {
-  background-color: lightblue;
+  background-color: #8AF;
 }
 .error-message {
   padding: 20px;
@@ -121,14 +125,13 @@ div.step {
             <th>Failed</th>
             <th>Skipped</th>
 
-            <th>Duration (ms)</th>
+            <th>Duration (seconds)</th>
             <th>Status</th>
           </tr>
         
           <tr>
-<<<<<<< HEAD
             <td></td>
-            <td class="bold">A sample test framework</td>
+            <td class="bold">Successful example</td>
 
             <!-- Scenarios -->
             <td>1</td>
@@ -146,45 +149,44 @@ div.step {
             <td class="passed">passed</td>
           </tr>
         
+          <tr>
+            <td></td>
+            <td class="bold">Failure example</td>
+
+            <!-- Scenarios -->
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+
+            <!-- Steps -->
+            <td>6</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+
+            <td>49</td>
+            <td class="failed">failed</td>
+          </tr>
+        
 
           <tr class="footer">
             <td>Totals</td>
-            <td>1</td>
-
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
+            <td>2</td>
 
             <td>3</td>
-            <td>3</td>
+            <td>2</td>
             <td>0</td>
-            <td>0</td>
+            <td>1</td>
 
-            <td>48</td>
-            <td class="passed">passed</td>
+            <td>9</td>
+            <td>6</td>
+            <td>1</td>
+            <td>2</td>
+
+            <td>97</td>
+            <td class="failed">failed</td>
           </tr>
-=======
-            <th>Successful example</th>
-            <th>1</th>
-            <th>3</th>
-            <th>0</th>
-            <th>0</th>
-            <th>48</th>
-            <th>passed</th>
-          </tr>
-        
-          <tr>
-            <th>Failure example</th>
-            <th>2</th>
-            <th>3</th>
-            <th>1</th>
-            <th>2</th>
-            <th>49</th>
-            <th>failed</th>
-          </tr>
-        
->>>>>>> 2f026549ba1d141c6490d8881ea061aa0ea7c587
         </thead>
       </table>
     </div>
@@ -211,18 +213,9 @@ div.step {
               <div class="steps">
                 
                   
-<<<<<<< HEAD
-                    <div class="step passed">Given: I visit the website www.bbc.co.uk</div>
-                  
-                
-                  
-                    <div class="step passed">When: I click on the news link</div>
-                  
-                
-                  
-                    <div class="step passed">Then: the bbc news page is opened</div>
-=======
-                    <div class="passed">Given: I visit the website www.bbc.co.uk</div>
+                    <div class="step passed">Given: I visit the website www.bbc.co.uk
+                      <span class="float-right">36.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -230,7 +223,9 @@ div.step {
                   
                 
                   
-                    <div class="passed">When: I click on the news link</div>
+                    <div class="step passed">When: I click on the news link
+                      <span class="float-right">11.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -238,7 +233,9 @@ div.step {
                   
                 
                   
-                    <div class="passed">Then: the bbc news page is opened</div>
+                    <div class="step passed">Then: the bbc news page is opened
+                      <span class="float-right">0.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -271,7 +268,9 @@ div.step {
               <div class="steps">
                 
                   
-                    <div class="failed">Given: I visit the website www.bbc.co.uk</div>
+                    <div class="step failed">Given: I visit the website www.bbc.co.uk
+                      <span class="float-right">2.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -323,7 +322,9 @@ div.step {
               <div class="steps">
                 
                   
-                    <div class="passed">Given: I visit the website www.bbc.co.uk</div>
+                    <div class="step passed">Given: I visit the website www.bbc.co.uk
+                      <span class="float-right">36.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -331,7 +332,9 @@ div.step {
                   
                 
                   
-                    <div class="passed">When: I click on the news link</div>
+                    <div class="step passed">When: I click on the news link
+                      <span class="float-right">11.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -339,12 +342,13 @@ div.step {
                   
                 
                   
-                    <div class="passed">Then: the bbc news page is opened</div>
+                    <div class="step passed">Then: the bbc news page is opened
+                      <span class="float-right">0.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
 
->>>>>>> 2f026549ba1d141c6490d8881ea061aa0ea7c587
                   
                 
               </div>
