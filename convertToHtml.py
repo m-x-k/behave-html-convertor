@@ -176,6 +176,6 @@ if __name__ == '__main__':
                     report_stats,
                     css_content,
                     general_content)
-    print(result)
+
     if outputfile:
         write(outputfile, result)

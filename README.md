@@ -29,10 +29,11 @@ usage: convertToHtml.py [-h] [-t T] [-i I] [-c C]
 
 optional arguments:
   -h, --help  show this help message and exit
-  -t T        Title for test report
+  -n N        Title for test report
   -i I        Behave json input file
   -o O        Output html file
   -c C        Override css
+  -t T        jinja2 template
 
 Example:
 
