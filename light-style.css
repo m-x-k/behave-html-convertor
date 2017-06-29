@@ -47,6 +47,11 @@ table.report-stats tr.footer {
 .skipped {
   background-color: #8AF;
 }
+.error-message {
+  padding: 20px;
+  background-color: lightpink;
+  font-style: italic;
+}
 div.results {
   padding-left: 50px;
   padding-right: 50px;

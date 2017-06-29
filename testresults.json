@@ -1,3 +1,169 @@
 [
-{"keyword": "Feature", "name": "A sample test framework", "tags": [], "location": "BDD/features/Open_a_website.feature:1", "status": "passed", "elements": [{"type": "scenario", "keyword": "Scenario", "name": "open a website", "tags": [], "location": "BDD/features/Open_a_website.feature:3", "steps": [{"keyword": "Given", "step_type": "given", "name": "I visit the website www.bbc.co.uk", "location": "BDD/features/Open_a_website.feature:4", "match": {"location": "BDD/steps/gherkin_steps.py:5", "arguments": []}, "result": {"status": "passed", "duration": 36.30694389343262}}, {"keyword": "When", "step_type": "when", "name": "I click on the news link", "location": "BDD/features/Open_a_website.feature:5", "match": {"location": "BDD/steps/gherkin_steps.py:10", "arguments": []}, "result": {"status": "passed", "duration": 10.861752033233643}}, {"keyword": "Then", "step_type": "then", "name": "the bbc news page is opened", "location": "BDD/features/Open_a_website.feature:6", "match": {"location": "BDD/steps/gherkin_steps.py:14", "arguments": []}, "result": {"status": "passed", "duration": 0.11465096473693848}}]}]}
+  {
+    "keyword": "Feature",
+    "name": "Successful example",
+    "tags": [],
+    "location": "BDD/features/Open_a_website.feature:1",
+    "status": "passed",
+    "elements": [
+      {
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "open a website success",
+        "tags": [],
+        "location": "BDD/features/Open_a_website.feature:3",
+        "steps": [
+          {
+            "keyword": "Given",
+            "step_type": "given",
+            "name": "I visit the website www.bbc.co.uk",
+            "location": "BDD/features/Open_a_website.feature:4",
+            "match": {
+              "location": "BDD/steps/gherkin_steps.py:5",
+              "arguments": []
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36.30694389343262
+            }
+          },
+          {
+            "keyword": "When",
+            "step_type": "when",
+            "name": "I click on the news link",
+            "location": "BDD/features/Open_a_website.feature:5",
+            "match": {
+              "location": "BDD/steps/gherkin_steps.py:10",
+              "arguments": []
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10.861752033233643
+            }
+          },
+          {
+            "keyword": "Then",
+            "step_type": "then",
+            "name": "the bbc news page is opened",
+            "location": "BDD/features/Open_a_website.feature:6",
+            "match": {
+              "location": "BDD/steps/gherkin_steps.py:14",
+              "arguments": []
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0.11465096473693848
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Feature",
+    "name": "Failure example",
+    "tags": [],
+    "location": "BDD/features/Open_a_website.feature:1",
+    "status": "failed",
+    "elements": [
+      {
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "open a website failure",
+        "tags": [],
+        "location": "BDD/features/Open_a_website.feature:3",
+        "steps": [
+          {
+            "keyword": "Given",
+            "step_type": "given",
+            "name": "I visit the website www.bbc.co.uk",
+            "location": "BDD/features/Open_a_website.feature:4",
+            "match": {
+              "location": "BDD/steps/gherkin_steps.py:5",
+              "arguments": []
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1.6165728569030762,
+              "error_message": [
+                "Traceback (most recent call last):",
+                "  File \"/Users/martin/.virtualenvs/python-behave-example/lib/python3.6/site-packages/behave/model.py\", line 1456, in run",
+                "    match.run(runner.context)",
+                "  File \"/Users/martin/.virtualenvs/python-behave-example/lib/python3.6/site-packages/behave/model.py\", line 1903, in run",
+                "    self.func(context, *args, **kwargs)",
+                "  File \"BDD/steps/gherkin_steps.py\", line 7, in step_impl",
+                "    impl.launch_website(context)",
+                "  File \"/Users/martin/code/MyRepo/python-behave-example/BDD/impl/test_implementation.py\", line 4, in launch_website",
+                "    assert \"BOGUS\" in driver.title",
+                "AssertionError"
+              ]
+            }
+          },
+          {
+            "keyword": "When",
+            "step_type": "when",
+            "name": "I click on the news link",
+            "location": "BDD/features/Open_a_website.feature:5"
+          },
+          {
+            "keyword": "Then",
+            "step_type": "then",
+            "name": "the bbc news page is opened",
+            "location": "BDD/features/Open_a_website.feature:6"
+          }
+        ]
+      },
+      {
+        "type": "scenario",
+        "keyword": "Scenario",
+        "name": "open a website success",
+        "tags": [],
+        "location": "BDD/features/Open_a_website.feature:3",
+        "steps": [
+          {
+            "keyword": "Given",
+            "step_type": "given",
+            "name": "I visit the website www.bbc.co.uk",
+            "location": "BDD/features/Open_a_website.feature:4",
+            "match": {
+              "location": "BDD/steps/gherkin_steps.py:5",
+              "arguments": []
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36.30694389343262
+            }
+          },
+          {
+            "keyword": "When",
+            "step_type": "when",
+            "name": "I click on the news link",
+            "location": "BDD/features/Open_a_website.feature:5",
+            "match": {
+              "location": "BDD/steps/gherkin_steps.py:10",
+              "arguments": []
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10.861752033233643
+            }
+          },
+          {
+            "keyword": "Then",
+            "step_type": "then",
+            "name": "the bbc news page is opened",
+            "location": "BDD/features/Open_a_website.feature:6",
+            "match": {
+              "location": "BDD/steps/gherkin_steps.py:14",
+              "arguments": []
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0.11465096473693848
+            }
+          }
+        ]
+      }
+    ]
+  }
 ]

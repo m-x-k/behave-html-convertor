@@ -43,6 +43,14 @@ table.report-stats tr.footer {
 .skipped {
   background-color: rgb(19, 47, 148);
 }
+.error-message {
+  padding: 20px;
+  background-color: darkred;
+  font-style: italic;
+}
+.error-message-line {
+
+}
 div.results {
   padding-left: 50px;
   padding-right: 50px;
