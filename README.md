@@ -27,7 +27,7 @@ As input you should take the report produced from a behave test run: `behave --f
 ```
 python convertToHtml.py -h
 
-usage: convertToHtml.py [-h] [-t T] [-i I] [-c C]
+usage: convertToHtml.py [-h] [-n N] [-i I] [-o O] [-c C] [-t T]
 
 optional arguments:
   -h, --help  show this help message and exit

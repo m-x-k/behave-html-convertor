@@ -6,4 +6,4 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - python convertToHtml.py -t "Test Report" -i testresults.json -c dark-style.css -o results.html
+  - python convertToHtml.py -n "Test Report" -i testresults.json -c dark-style.css -t results_template.html -o results.html
