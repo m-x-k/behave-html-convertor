@@ -1,6 +1,6 @@
 # Behave custom HTML report
 
-Using the behave json report format this script outputs a custom html report.
+Using the behave json report format this script outputs a custom html report with useful stats on each feature, scenario and step.
 
 ## Requirements
 
