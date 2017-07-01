@@ -1,5 +1,7 @@
 # Behave custom HTML report
 
+[![Build Status](https://travis-ci.org/m-x-k/behave-html-convertor.svg?branch=master)](https://travis-ci.org/m-x-k/behave-html-convertor)
+
 Using the behave json report format this script outputs a custom html report with useful stats on each feature, scenario and step.
 
 ## Requirements
@@ -37,6 +39,6 @@ optional arguments:
 
 Example:
 
-python convertToHtml.py -t "Test Report" -i testresults.json -c dark-style.css -o results.html
+python convertToHtml.py -n "Test Report" -i testresults.json -c dark-style.css -t results_template.html -o results.html
 ```
 
