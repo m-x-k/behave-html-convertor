@@ -5,38 +5,53 @@
     <title>Results</title>
     <style>
     body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: white;
   color: black;
   padding: 10px;
-  font-size: 1.2em;
+  font-size: 0.8em;
 }
 h1 {
   font-size: 3em;
   text-align: center;
 }
 table.report-stats {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 50px;
   margin-left:auto;
   margin-right:auto;
 }
 table.report-stats td, th {
+  border: 1px solid gray;
   padding: 10px;
 }
 table.report-stats tr.header {
   background-color: #66CCEE;
 }
+table.report-stats tr.footer {
+  background-color: grey;
+  font-weight: bold;
+}
+.bold {
+  font-weight: bold;
+}
+.info {
+  font-style: italic;
+}
 .float-right {
   float: right;
 }
+.keyword {
+  font-weight: bold;
+}
 .failed {
-  background-color: lightcoral;
+  background-color: #F2928C;
 }
 .passed {
-  background-color: lightgreen;
+  background-color: #92DD96;
 }
 .skipped {
-  background-color: lightblue;
+  background-color: #8AF;
 }
 .error-message {
   padding: 20px;
@@ -49,6 +64,7 @@ div.results {
 }
 div.feature-header {
   padding: 10px;
+  font-weight: bold;
 }
 div.feature {
   display: none;
@@ -63,63 +79,121 @@ div.scenario {
 div.scenario-header {
   padding-top: 10px;
   padding-left: 10px;
+  font-weight: bold;
 }
 div.steps {
   padding-top: 10px;
   padding-left: 10px;
+}
+div.step {
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
     </style>
   </head>
   <body>
 
-    <h1>Test Results</h1>
+    <h1>Test Report</h1>
 
     <div class="report">
       <table class="report-stats">
         <thead>
           <tr class="header">
             <th></th>
+            <th></th>
             <th colspan="4">Scenarios</th>
+            <th colspan="4">Steps</th>
             <th></th>
             <th></th>
           </tr>
           <tr class="header-row">
+            <th></th>
             <th>Feature</th>
+
+            <!-- Scenarios -->
             <th>Total</th>
             <th>Passed</th>
             <th>Failed</th>
             <th>Skipped</th>
-            <th>Duration (ms)</th>
+
+            <!-- Steps -->
+            <th>Total</th>
+            <th>Passed</th>
+            <th>Failed</th>
+            <th>Skipped</th>
+
+            <th>Duration (seconds)</th>
             <th>Status</th>
           </tr>
         
           <tr>
-            <th>Successful example</th>
-            <th>1</th>
-            <th>3</th>
-            <th>0</th>
-            <th>0</th>
-            <th>48</th>
-            <th>passed</th>
+            <td></td>
+            <td class="bold">Successful example</td>
+
+            <!-- Scenarios -->
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+
+            <!-- Steps -->
+            <td>3</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+
+            <td>48</td>
+            <td class="passed">passed</td>
           </tr>
         
           <tr>
-            <th>Failure example</th>
-            <th>2</th>
-            <th>3</th>
-            <th>1</th>
-            <th>2</th>
-            <th>49</th>
-            <th>failed</th>
+            <td></td>
+            <td class="bold">Failure example</td>
+
+            <!-- Scenarios -->
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+
+            <!-- Steps -->
+            <td>6</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+
+            <td>49</td>
+            <td class="failed">failed</td>
           </tr>
         
+
+          <tr class="footer">
+            <td>Totals</td>
+            <td>2</td>
+
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+
+            <td>9</td>
+            <td>6</td>
+            <td>1</td>
+            <td>2</td>
+
+            <td>97</td>
+            <td class="failed">failed</td>
+          </tr>
         </thead>
       </table>
     </div>
 
     <div class="results">
 
+      <span class="info">Click feature or scenario to expand</span>
       <!-- Features -->
       
         
@@ -139,7 +213,9 @@ div.steps {
               <div class="steps">
                 
                   
-                    <div class="passed">Given: I visit the website www.bbc.co.uk</div>
+                    <div class="step passed">Given: I visit the website www.bbc.co.uk
+                      <span class="float-right">36.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -147,7 +223,9 @@ div.steps {
                   
                 
                   
-                    <div class="passed">When: I click on the news link</div>
+                    <div class="step passed">When: I click on the news link
+                      <span class="float-right">11.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -155,7 +233,9 @@ div.steps {
                   
                 
                   
-                    <div class="passed">Then: the bbc news page is opened</div>
+                    <div class="step passed">Then: the bbc news page is opened
+                      <span class="float-right">0.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -188,7 +268,9 @@ div.steps {
               <div class="steps">
                 
                   
-                    <div class="failed">Given: I visit the website www.bbc.co.uk</div>
+                    <div class="step failed">Given: I visit the website www.bbc.co.uk
+                      <span class="float-right">2.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -240,7 +322,9 @@ div.steps {
               <div class="steps">
                 
                   
-                    <div class="passed">Given: I visit the website www.bbc.co.uk</div>
+                    <div class="step passed">Given: I visit the website www.bbc.co.uk
+                      <span class="float-right">36.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -248,7 +332,9 @@ div.steps {
                   
                 
                   
-                    <div class="passed">When: I click on the news link</div>
+                    <div class="step passed">When: I click on the news link
+                      <span class="float-right">11.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     
@@ -256,7 +342,9 @@ div.steps {
                   
                 
                   
-                    <div class="passed">Then: the bbc news page is opened</div>
+                    <div class="step passed">Then: the bbc news page is opened
+                      <span class="float-right">0.0 seconds</span>
+                    </div>
 
                     <!-- Errors -->
                     

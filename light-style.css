@@ -1,36 +1,51 @@
 body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: white;
   color: black;
   padding: 10px;
-  font-size: 1.2em;
+  font-size: 0.8em;
 }
 h1 {
   font-size: 3em;
   text-align: center;
 }
 table.report-stats {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 50px;
   margin-left:auto;
   margin-right:auto;
 }
 table.report-stats td, th {
+  border: 1px solid gray;
   padding: 10px;
 }
 table.report-stats tr.header {
   background-color: #66CCEE;
 }
+table.report-stats tr.footer {
+  background-color: grey;
+  font-weight: bold;
+}
+.bold {
+  font-weight: bold;
+}
+.info {
+  font-style: italic;
+}
 .float-right {
   float: right;
 }
+.keyword {
+  font-weight: bold;
+}
 .failed {
-  background-color: lightcoral;
+  background-color: #F2928C;
 }
 .passed {
-  background-color: lightgreen;
+  background-color: #92DD96;
 }
 .skipped {
-  background-color: lightblue;
+  background-color: #8AF;
 }
 .error-message {
   padding: 20px;
@@ -43,6 +58,7 @@ div.results {
 }
 div.feature-header {
   padding: 10px;
+  font-weight: bold;
 }
 div.feature {
   display: none;
@@ -57,8 +73,15 @@ div.scenario {
 div.scenario-header {
   padding-top: 10px;
   padding-left: 10px;
+  font-weight: bold;
 }
 div.steps {
   padding-top: 10px;
   padding-left: 10px;
+}
+div.step {
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
