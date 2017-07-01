@@ -39,3 +39,4 @@ Example:
 
 python convertToHtml.py -t "Test Report" -i testresults.json -c dark-style.css -o results.html
 ```
+
